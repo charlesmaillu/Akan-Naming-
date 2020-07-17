@@ -1,0 +1,1 @@
+https://github.com/charlesmaillu/Akan-Naming-/blob/master/license
