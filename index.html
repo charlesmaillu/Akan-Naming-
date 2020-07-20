@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-compatible" content="ie-edge">
-    <title>charles Mailu E-portfolio</title>
+    <title>Akan name </title>
     <link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
 
     <div class="container">
@@ -18,8 +20,8 @@
 
     </div>
 
-    <nav id="navbar" >
-        <div class="container" >
+    <nav id="navbar">
+        <div class="container">
             <ul>
                 <li><a href="https://charlesmaillu.github.io/Portfolio">home</a></li>
                 <li><a href="http://www.afropedea.org/adinto-akan-naming-and-outdooring-ceremony">about</a></li>
@@ -28,73 +30,114 @@
 
     </nav>
 
-    <div class="container" >
+    <div class="container">
 
         <section>
             <aside id="sidebar">
-               
+
                 <p>Fill your details below here to know your Akan Name</p>
 
-                <form action="calculate">
+                <form name="input_form" action="javascript:validate();">
                     <div>
                         <label for="day">Day of birth</label><br>
-                        <input type="text" id="day">
+                        <input type="text" name="day" required>
                     </div>
                     <div>
                         <label for="month">Month of birth</label><br>
-                        <input type="text" id="month">
+                        <input type="text" name="month" required>
                     </div>
                     <div>
                         <label for="year">Year of birth</label><br>
-                        <input type="text" id="year" required>
+                        <input type="text" name="year" required>
                     </div>
                     <div>
                         <label for="century">Century of birth</label><br>
-                        <input type="text" id="century" required>
+                        <input type="text" name="century" required>
                     </div>
                     <div>
-                        <label for="sex">sex</label><br>
-                        <input type="text" id="sex" required>
+                        <label for="sex">choose sex</label>
+                        <select name="sex" id="sex">
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                        </select>
+
                     </div>
                 </form>
-                
+
                 <p>KEY</p>
                 <ol>
-                    <li>the century digits (1989 = 19)</li> 
+                    <li>the century digits (1989 = 19)</li>
                     <li>the Year digits (1989 = 89)</li>
                 </ol>
 
-                <input type="button" value="submit" id="submit" onclick="akanName()">
-                <p id="akan"></p>
-            
+                <input type="submit" value="calculate">
+                <p id="output_Text"></p>
+
             </aside>
         </section>
-        
+
         <section>
             <div id="mainblock">
                 <p>
-                    In the Akan societies of West Africa, names and the process of naming are essential since everyone and almost every living entity has a place and mission in the world. The name of a person or entity reflects its purpose in life. The adinto or abadinto (lit., "to throw [a] name") or naming ceremony takes places usually at the father's house on the eighth day, that is, a week after and on the day the child was born. For example, a child born on Sunday will have his or her naming ceremony on the following Sunday and will be given the first name, Kwasi or Akosua. For the Akan, a child's first name or kradin ("soul name") is routinely given based on the Akan week (nnawɔtwe, "eight days"). The following shows the Akan naming system according to the days of the week:
-                
+                    In the Akan societies of West Africa, names and the process of naming are essential since everyone
+                    and almost every living entity has a place and mission in the world. The name of a person or entity
+                    reflects its purpose in life. The adinto or abadinto (lit., "to throw [a] name") or naming ceremony
+                    takes places usually at the father's house on the eighth day, that is, a week after and on the day
+                    the child was born. For example, a child born on Sunday will have his or her naming ceremony on the
+                    following Sunday and will be given the first name, Kwasi or Akosua. For the Akan, a child's first
+                    name or kradin ("soul name") is routinely given based on the Akan week (nnawɔtwe, "eight days"). The
+                    following shows the Akan naming system according to the days of the week:
+
                 </p>
                 <ol>
                     <li><strong>Days:</strong>Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, and Saturday</li>
-                    <li><strong>Male names:</strong>Kwasi/Kwesi, Kwadwo, Kwabena, Kwaku, Kwao/Yao, Kwafi/Kofi, and Kwame/Kwamena</li>
+                    <li><strong>Male names:</strong>Kwasi/Kwesi, Kwadwo, Kwabena, Kwaku, Kwao/Yao, Kwafi/Kofi, and
+                        Kwame/Kwamena</li>
                     <li><strong>Female names: </strong>Akosua/Esi, Adwoa, Abena, Akua, Yaa, Afia/Afua, and Amma</li>
-                    <li><strong>Praise names:</strong>Bodua (protector, leader), Okoto (calm, humble), Ogyam (good, humane), Ntonni (advocate, hero), Pereko (fearless, firm), Okyin (adventurer, itinerant), and Atoapem (ancient, heroic)</li>
+                    <li><strong>Praise names:</strong>Bodua (protector, leader), Okoto (calm, humble), Ogyam (good,
+                        humane), Ntonni (advocate, hero), Pereko (fearless, firm), Okyin (adventurer, itinerant), and
+                        Atoapem (ancient, heroic)</li>
                 </ol>
-                     
+
             </div>
         </section>
 
 
     </div>
-    
-    <footer id="mainfooter" >
+
+    <footer id="mainfooter">
         <p>
             Copyright &#169 2020 My E-portfolio
         </p>
     </footer>
-    <script src="index.js"></script>
-    
+    <script>
+        var CC, DD, YY, MM,d, maleNames,femaleNames;
+        var outputText;
+
+        function validate() {
+            CC = document.forms['input_form']["century"].value;
+            console.log(CC)
+            YY = document.forms['input_form']["year"].value;
+            MM = document.forms['input_form']["month"].value;
+            DD = document.forms['input_form']["day"].value;
+            sex = document.forms['input_form']['sex'].value;
+
+            maleNames = ['Kwasi', 'Kwadwo', 'Kwabena', 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
+            femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
+
+            d = math.round((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
+
+
+            if (DD <= 0){
+                outputText = 'insert correct date';
+            }else if (DD > 31){
+                outputText = 'insert correct date';
+            }
+            //output result or errors
+            document.getElementById('output_Text').innerHTML = outputText;
+        } 
+    </script>
+
 </body>
+
 </html>

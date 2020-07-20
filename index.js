@@ -12,7 +12,7 @@ function akanName(){
     var MM = parseInt(document.getElementById("month"));
     var DD = parseInt(document.getElementById("day"));
 
-    var d = math.round((((CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD) %7)
+    var 
 
     if(sex==male){
         document.getElementById('akan').innerHTML = `your Akan name is ${maleNames[d]}`
