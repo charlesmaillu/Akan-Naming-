@@ -33,33 +33,38 @@
         <section>
             <aside id="sidebar">
                
-                <p>Fiil your details below here to know your Akan Name</p>
+                <p>Fill your details below here to know your Akan Name</p>
 
-                <div>
-                    <label for="day">Day of birth</label><br>
-                    <input type="text" id="day">
-                </div>
-                <div>
-                    <label for="month">Month of birth</label><br>
-                    <input type="text" id="month">
-                </div>
-                <div>
-                    <label for="year">Year of birth</label><br>
-                    <input type="text" id="year">
-                </div>
-                <div>
-                    <label for="century">Century of birth</label><br>
-                    <input type="text" id="century">
-                </div>
-                <div>
-                    <label for="sex">sex</label><br>
-                    <input type="text" id="sex">
-                </div>
+                <form action="calculate">
+                    <div>
+                        <label for="day">Day of birth</label><br>
+                        <input type="text" id="day">
+                    </div>
+                    <div>
+                        <label for="month">Month of birth</label><br>
+                        <input type="text" id="month">
+                    </div>
+                    <div>
+                        <label for="year">Year of birth</label><br>
+                        <input type="text" id="year" required>
+                    </div>
+                    <div>
+                        <label for="century">Century of birth</label><br>
+                        <input type="text" id="century" required>
+                    </div>
+                    <div>
+                        <label for="sex">sex</label><br>
+                        <input type="text" id="sex" required>
+                    </div>
+                </form>
+                
                 <p>KEY</p>
                 <ol>
                     <li>the century digits (1989 = 19)</li> 
                     <li>the Year digits (1989 = 89)</li>
                 </ol>
+
+                <input type="button" value="submit" id="submit" onclick="akanName()">
                 <p id="akan"></p>
             
             </aside>
@@ -89,7 +94,7 @@
             Copyright &#169 2020 My E-portfolio
         </p>
     </footer>
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
     
 </body>
 </html>

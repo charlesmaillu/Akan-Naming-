@@ -3,7 +3,7 @@
 #### By **Charles N. Mailu**
 ## Description
 
-This is a practice fortfolio creation, an assigment of week one in moringa school, the purpose is for practising how to create a E-portfolio
+This is a akan name generating website build for practice on of week two javavascript at moringa school prep class 
 
 ## Setup/Installation Requirements
 
