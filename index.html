@@ -7,51 +7,7 @@
     <title>Akan name </title>
     <link rel="stylesheet" href="./style.css">
 
-    <script>
-        var CC, DD, YY, MM,d, maleNames,femaleNames;
-        var outputText;
-
-        function validate() {
-            CC = document.forms['input_form']["century"].value;
-            console.log(CC)
-            YY = document.forms['input_form']["year"].value;
-            MM = document.forms['input_form']["month"].value;
-            DD = document.forms['input_form']["day"].value;
-            sex = document.forms['input_form']['sex'].value;
-
-            maleNames = ['Kwasi', 'Kwadwo', 'Kwabena', 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
-            femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
-
-            d = math.round((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
-
-
-            if (DD <= 0){
-                outputText = 'insert correct day';
-            }else if (DD > 31){
-                outputText = 'insert correct day';
-            }else if (MM > 12){
-                outputText = 'insert correct month';
-            }else if (MM <= 0){
-                outputText = 'insert correct month';
-            }else if (YY > 99){
-                outputText = 'insert correct year';
-            }else if (YY <= 0){
-                outputText = 'insert correct year';
-            }else if (CC > 99){
-                outputText = 'insert correct century';
-            }else if (CC <= 12){
-                outputText = 'insert correct century';
-            }else if (sex == male){
-                outputText = `Your Akan name id ${maleNames[d]}`;
-            }else if (sex == female){
-                outputText = `Your Akan name id ${femaleNames[d]}`;
-            }
-            //output result or errors
-            document.getElementById('output_Text').innerHTML = outputText;
-        } 
-    </script>
-
-
+   
 </head>
 
 <body>
@@ -81,22 +37,22 @@
 
                 <p>Fill your details below here to know your Akan Name</p>
 
-                <form name="input_form" action="javascript:validate();">
+                <form name="input_form" onsubmit="retun.result()">
                     <div>
                         <label for="day">Day of birth</label><br>
-                        <input type="text" name="day" required>
+                        <input type="text" id="day" required>
                     </div>
                     <div>
                         <label for="month">Month of birth</label><br>
-                        <input type="text" name="month" required>
+                        <input type="text" id="month" required>
                     </div>
                     <div>
                         <label for="year">Year of birth</label><br>
-                        <input type="text" name="year" required>
+                        <input type="text" id="year" required>
                     </div>
                     <div>
                         <label for="century">Century of birth</label><br>
-                        <input type="text" name="century" required>
+                        <input type="text" id="century" required>
                     </div>
                     <div>
                         <label for="sex">choose sex</label>
@@ -114,8 +70,11 @@
                     <li>the Year digits (1989 = 89)</li>
                 </ol>
 
-                <input type="submit" value="calculate" onclick="function validate()">
-                <p id="output_Text"></p>
+                <input type="submit" value="submit" >
+
+                <div id="output">
+
+                </div>
 
             </aside>
         </section>
@@ -154,6 +113,8 @@
             Copyright &#169 2020 My E-portfolio
         </p>
     </footer>
+
+    <script src="./index.js"></script>
 
 </body>
 
