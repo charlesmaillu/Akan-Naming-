@@ -4,9 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-compatible" content="ie-edge">
     <title>Akan name </title>
     <link rel="stylesheet" href="./style.css">
+
+    <script>
+        var CC, DD, YY, MM,d, maleNames,femaleNames;
+        var outputText;
+
+        function validate() {
+            CC = document.forms['input_form']["century"].value;
+            console.log(CC)
+            YY = document.forms['input_form']["year"].value;
+            MM = document.forms['input_form']["month"].value;
+            DD = document.forms['input_form']["day"].value;
+            sex = document.forms['input_form']['sex'].value;
+
+            maleNames = ['Kwasi', 'Kwadwo', 'Kwabena', 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
+            femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
+
+            d = math.round((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
+
+
+            if (DD <= 0){
+                outputText = 'insert correct day';
+            }else if (DD > 31){
+                outputText = 'insert correct day';
+            }else if (MM > 12){
+                outputText = 'insert correct month';
+            }else if (MM <= 0){
+                outputText = 'insert correct month';
+            }else if (YY > 99){
+                outputText = 'insert correct year';
+            }else if (YY <= 0){
+                outputText = 'insert correct year';
+            }else if (CC > 99){
+                outputText = 'insert correct century';
+            }else if (CC <= 12){
+                outputText = 'insert correct century';
+            }else if (sex == male){
+                outputText = `Your Akan name id ${maleNames[d]}`;
+            }else if (sex == female){
+                outputText = `Your Akan name id ${femaleNames[d]}`;
+            }
+            //output result or errors
+            document.getElementById('output_Text').innerHTML = outputText;
+        } 
+    </script>
+
 
 </head>
 
@@ -70,7 +114,7 @@
                     <li>the Year digits (1989 = 89)</li>
                 </ol>
 
-                <input type="submit" value="calculate">
+                <input type="submit" value="calculate" onclick="function validate()">
                 <p id="output_Text"></p>
 
             </aside>
@@ -110,33 +154,6 @@
             Copyright &#169 2020 My E-portfolio
         </p>
     </footer>
-    <script>
-        var CC, DD, YY, MM,d, maleNames,femaleNames;
-        var outputText;
-
-        function validate() {
-            CC = document.forms['input_form']["century"].value;
-            console.log(CC)
-            YY = document.forms['input_form']["year"].value;
-            MM = document.forms['input_form']["month"].value;
-            DD = document.forms['input_form']["day"].value;
-            sex = document.forms['input_form']['sex'].value;
-
-            maleNames = ['Kwasi', 'Kwadwo', 'Kwabena', 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
-            femaleNames = ['Akosua', 'Adwoa', 'Abenaa', 'Akua', 'Yaa', 'Afua', 'Ama'];
-
-            d = math.round((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7);
-
-
-            if (DD <= 0){
-                outputText = 'insert correct date';
-            }else if (DD > 31){
-                outputText = 'insert correct date';
-            }
-            //output result or errors
-            document.getElementById('output_Text').innerHTML = outputText;
-        } 
-    </script>
 
 </body>
 
