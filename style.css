@@ -28,7 +28,7 @@ body{
     padding: 10px; 
     box-sizing: border-box;
     image-resolution: 200; 
-    background-image:url('./images/background.jpg');  
+    background-image:url('./images/background.jpg'); 
 }
 
 #mainblock{
