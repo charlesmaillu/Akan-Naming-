@@ -21,11 +21,11 @@ function getInput(){
     return false;
   }
 }
-//Calculate func
+//Calc func
 function calculateDay(){
     getInput();
     dayOfWeek = ((((century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + dayOfMonth) % 7) -1;
-    console.log(dayOfWeek); //Test the calculateDay function
+    console.log(dayOfWeek); //Test 
     return (Math.floor(dayOfWeek));
 }
 
@@ -33,7 +33,7 @@ function calculateDay(){
  function checkDayOfWeek(){
      day = calculateDay();
       checkGender();
-      console.log("The function runs");//Test chackDayOfWeek function
+      console.log("The function runs");//Test 
 }
 
 //arrays
