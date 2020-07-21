@@ -37,44 +37,32 @@
 
                 <p>Fill your details below here to know your Akan Name</p>
 
-                <form name="input_form" onsubmit="retun.result()">
-                    <div>
-                        <label for="day">Day of birth</label><br>
-                        <input type="text" id="day" required>
-                    </div>
-                    <div>
-                        <label for="month">Month of birth</label><br>
-                        <input type="text" id="month" required>
-                    </div>
-                    <div>
-                        <label for="year">Year of birth</label><br>
-                        <input type="text" id="year" required>
-                    </div>
-                    <div>
-                        <label for="century">Century of birth</label><br>
-                        <input type="text" id="century" required>
-                    </div>
-                    <div>
-                        <label for="sex">choose sex</label>
-                        <select name="sex" id="sex">
-                            <option value="male">male</option>
-                            <option value="female">female</option>
-                        </select>
-
-                    </div>
-                </form>
-
-                <p>KEY</p>
-                <ol>
-                    <li>the century digits (1989 = 19)</li>
-                    <li>the Year digits (1989 = 89)</li>
-                </ol>
-
-                <input type="submit" value="submit" >
-
-                <div id="output">
-
+                <form action="">
+                <div class="form-group top-form">
+                        <label for="century" class="labels">Century</label><br>
+                        <input type="number" class="form-control" placeholder="Enter the century" id="century" required  min="0" max="30"><br>
                 </div>
+                <div class="form-group">
+                        <label for="year" class="labels">Year</label><br>
+                        <input type="number" placeholder="Enter the year" class="form-control" id="year" required min="0" max="100"><br>
+                </div>
+                <div class="form-group">
+                        <label for="month" class="labels">Month</label><br>
+                        <input type="number" class="form-control" placeholder="Enter the month of the year" id="month" required min="0" max="12"><br>
+                </div>
+                <div class="form-group">
+                        <label for="monthDay" class="labels">Day of month</label><br>
+                        <input type="number" placeholder="Enter the day of the month" class="form-control" id="monthday" required min="0" max="12"><br>
+                </div>
+                <form class="radio-button">
+                        <input type="radio" class="genders labels" value="male" id="rad1" name="rads" required>Male
+                        <input type="radio" class="genders labels" value="female" id="rad1" name="rads" required>Female
+                </form>
+                      <br>
+                      <a href="#result"><button type="button" name="button" class="btn btn-primary mb-2" onclick="checkDayOfWeek();">Calculate Birthday</button></a>
+                      <h1 id="result"></h1>
+                </form>   
+                    
 
             </aside>
         </section>
