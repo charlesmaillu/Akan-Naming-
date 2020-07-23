@@ -5,22 +5,10 @@ function getInput(){
   year = parseInt(document.getElementById("year").value);
   month = parseInt(document.getElementById("month").value);
   dayOfMonth = parseInt(document.getElementById("monthday").value);
-
-
-  if(century == ""){
-    alert("Input the correct gender");
-    return false;
-  }else if (year == ""){
-    alert("Input the correct year");
-    return false;
-  }else if (month == ""){
-    alert("Input the correct month");
-    return false;
-  }else if(dayOfMonth == ""){
-    alert("input the correct date");
-    return false;
-  }
+  form = document.getElementById('form')
 }
+
+
 //Calculate func
 function calculateDay(){
     getInput();
@@ -45,13 +33,15 @@ let femaleNames =[" Akosua"," Adwoa","Abenaa","Akua","Yaa","Afua","Ama"]
 //get selected radio button
 function checkGender(){
   var gen = document.getElementsByName("rads");
-  if(gen[0].checked == true){
+  if(gen[0].checked == true && century !== "" &&  dayOfMonth !== "" &&  month !== "" && year !== "" && dayOfMonth > 0 && dayOfMonth <31 && month > 0 && month < 12 && year > 0 && year < 100){
       var gender = "male";
       document.getElementById("result").innerHTML = `You were born on a ${daysOfWeek[day]} and your Akan name is ${maleNames[day]}`;
-  }else if(gen[1].checked == true){
+  }else if(gen[1].checked == true && century !== "" &&  dayOfMonth !== "" &&  month !== "" && year !== "" && dayOfMonth > 0 && dayOfMonth <31 && month > 0 && month < 12 && year > 0 && year < 100){
       var gender = "female";
       document.getElementById("result").innerHTML = `You were born on a ${daysOfWeek[day]} and your Akan name is ${femaleNames[day]}`;
+  }else if(gen[0].checked == false || gen[1].checked == false){
+	document.getElementById("result").innerHTML ='select gender'
   }else{
-      document.getElementById("result").innerHTML= `select gender`;
+      document.getElementById("result").innerHTML= `insert correct data`;
   }
 }
