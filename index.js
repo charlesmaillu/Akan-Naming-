@@ -41,7 +41,6 @@ function checkGender(){
         document.getElementById("result").innerHTML = ` date`;
         alert('enter correct year')
   }else if(gen[0].checked == false || gen[1].checked == false && century !== "" &&  dayOfMonth !== "" &&  month !== "" && year !== "" && dayOfMonth > 0 && dayOfMonth <31 && month > 0 && month < 12 && year > 0 && year < 100){
-      document.getElementById("result").innerHTML = `You were born on a ${daysOfWeek[day]} and your Akan name is ${maleNames[day]}`){
         document.getElementById("result").innerHTML ='select gender'
         alert('select gender')
   }else{
