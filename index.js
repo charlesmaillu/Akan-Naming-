@@ -5,26 +5,15 @@ function getInput(){
   year = parseInt(document.getElementById("year").value);
   month = parseInt(document.getElementById("month").value);
   dayOfMonth = parseInt(document.getElementById("monthday").value);
-
-
-  if(century ===""){
-    alert("Input the correct gender");
-    return false;
-  }else if (year === ""){
-    alert("Input the correct year");
-    return false;
-  }else if (month === ""){
-    alert("Input the correct month");
-    return false;
-  }else if(dayOfMonth === ""){
-    alert("input the correct date");
-    return false;
-  }
+  form =document.getElementById('form') 
+  
 }
+
+
 //Calc func
 function calculateDay(){
     getInput();
-    dayOfWeek = ((((century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + dayOfMonth) % 7) -1;
+    dayOfWeek = ((((century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + dayOfMonth) % 7);
     console.log(dayOfWeek); //Test 
     return (Math.floor(dayOfWeek));
 }

@@ -30,38 +30,42 @@
 
                 <p>Fill your details below </p>
 
-                <form action="">
-                <div class="form-group top-form">
+                <form id="form">
+                    <div class="form-group top-form">
                         <label for="century" class="labels">Century</label><br>
-                        <input type="number" class="form-control" placeholder="Enter the century" id="century" required  min="0" max="30"><br>
-                </div>
-                <div class="form-group">
-                        <label for="year" class="labels">Year</label><br>
-                        <input type="number" placeholder="Enter the year" class="form-control" id="year" required min="0" max="100"><br>
-                </div>
-                <div class="form-group">
-                        <label for="month" class="labels">Month</label><br>
-                        <input type="number" class="form-control" placeholder="Enter the month of the year" id="month" required min="0" max="12"><br>
-                </div>
-                <div class="form-group">
-                        <label for="monthDay" class="labels">Day of month</label><br>
-                        <input type="number" placeholder="Enter the day of the month" class="form-control" id="monthday" required min="0" max="12"><br>
-                </div>
-                <form class="radio-button">
-                        <input type="radio" class="genders labels" value="male" id="rad1" name="rads" required>Male
-                        <input type="radio" class="genders labels" value="female" id="rad1" name="rads" required>Female
+                        <input type="text" class="form-control" placeholder="Enter the century" id="century" required >
+                    </div>
+                    <div class="form-group">
+                            <label for="year" class="labels">Year</label><br>
+                            <input type="text" placeholder="Enter the year" class="form-control" id="year" required>
+                    </div>
+                    <div class="form-group">
+                            <label for="month" class="labels">Month</label><br>
+                            <input type="text" class="form-control" placeholder="Enter the month" id="month" required>
+                    </div>
+                    <div class="form-group">
+                            <label for="monthDay" class="labels">Day of month</label><br>
+                            <input type="number" placeholder="Enter the day" class="form-control" id="monthday" required>
+                    </div>
+                    <div class="radio-button">
+                            <input type="radio" class="genders labels" value="male" id="rad1" name="rads" required>Male
+                            <input type="radio" class="genders labels" value="female" id="rad1" name="rads" required>Female
+                    </div>
+                    <div>
+                        <a href="#result"><button type="button" name="button" class="btn btn-primary mb-2" onclick="checkDayOfWeek();">Submit</button></a>
+                        <h4 id="result"></h4>
+                    </div>
+                    <div id="error"></div>
+                    <div>
+                        <h5>KEY:</h5>
+                        <p>Follow the following instruction;</p>
+                        <ol>
+                            <li>Year of birth (1989 has = 89)</li>
+                            <li>Century of birth(1989 has = 19) </li>
+                        </ol>
+                    </div>     
                 </form>
-                      <br>
-                      <a href="#result"><button type="button" name="button" class="btn btn-primary mb-2" onclick="checkDayOfWeek();">Submit</button></a>
-                      <h1 id="result"></h1><br>
-                </form>
-                <h3>KEY:</h3>
-                <p>Follow the following instruction;</p>
-                <ol>
-                    <li>Year of birth (1989 has = 89)</li>
-                    <li>Century of birth(1989 has = 19) </li>
-                </ol>
-                    
+                
             </aside>
         </section>
 

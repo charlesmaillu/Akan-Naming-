@@ -54,6 +54,9 @@ body{
 #kifuniko{
     text-align: left;
 }
+#result{
+    color: teal;
+}
 
 @media(max-width:600px){
     #sidebar{
