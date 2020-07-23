@@ -27,8 +27,9 @@ body{
     background-color: black;
     padding: 10px; 
     box-sizing: border-box;
-    image-resolution: 200; 
-    background-image:url('./images/background.jpg'); 
+    image-resolution: 200;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;  
 }
 
 #mainblock{
@@ -37,8 +38,10 @@ body{
     padding:0 30px;
     box-sizing: border-box;
     text-align: center;
-    background-color: black;
-    color:whitesmoke;
+    background-color:whitesmoke;
+    color:rgb(5, 5, 12);
+    font-family: Arial, Helvetica, serif;
+    font-weight: 500;
 }
 
 #mainfooter{
@@ -47,6 +50,9 @@ body{
     text-align: center;
     padding: 20px;
     margin: 0;
+}
+#kifuniko{
+    text-align: left;
 }
 
 @media(max-width:600px){
