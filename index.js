@@ -31,18 +31,21 @@ function checkGender(){
         document.getElementById("result").innerHTML = `You were born on a ${daysOfWeek[day]} and your Akan name is ${maleNames[day]}`;
   }else if(gen[1].checked == true && century !== "" &&  dayOfMonth !== "" &&  month !== "" && year !== "" && dayOfMonth > 0 && dayOfMonth <31 && month > 0 && month < 12 && year > 0 && year < 100){
         document.getElementById("result").innerHTML = `You were born on a ${daysOfWeek[day]} and your Akan name is ${femaleNames[day]}`;
-  }else if(gen[1].checked == true || gen[0].checked == true && century === "" &&  dayOfMonth !== "" &&  month !== "" && year !== "" && dayOfMonth > 0 && dayOfMonth <31 && month > 0 && month < 12 && year > 0 && year < 100){
+  }else if(gen[1].checked == true || gen[0].checked == true && century ==="" &&  dayOfMonth !== "" &&  month !== "" && year !== "" && dayOfMonth > 0 && dayOfMonth <31 && month > 0 && month < 12 && year > 0 && year < 100){
         document.getElementById("result").innerHTML = `enter century data`;
         alert('enter century data')
-  }else if(gen[1].checked == true || gen[0].checked == true && century !== "" &&  dayOfMonth == "" &&  month !== "" && year !== "" || dayOfMonth < 0 || dayOfMonth >31 && month > 0 && month < 12 && year > 0 && year < 100){
-        document.getElementById("result").innerHTML = ` date`;
+  }else if(gen[1].checked == true || gen[0].checked == true && century !== "" &&  month !== "" && year !== ""&& month > 0 && month < 12 && year > 0 && year < 100 || dayOfMonth == ""  || dayOfMonth < 0 || dayOfMonth >31) {
+        document.getElementById("result").innerHTML = `enter date`;
         alert('enter correct date')
-  }else if(gen[1].checked == true || gen[0].checked == true && century !== "" &&  dayOfMonth !== "" &&  month !== "" && year == "" && dayOfMonth > 0 || dayOfMonth <31 && month > 0 && month < 12 || year < 0 || year > 100){
-        document.getElementById("result").innerHTML = ` date`;
+  }else if(gen[1].checked == true || gen[0].checked == true && century !== "" &&  dayOfMonth !== "" && dayOfMonth > 0 && dayOfMonth <31 &&  month !== ""  && month > 0 && month < 12 || year === ""  || year < 0 || year > 100){
+        document.getElementById("result").innerHTML = ` enter year`;
         alert('enter correct year')
   }else if(gen[0].checked == false || gen[1].checked == false && century !== "" &&  dayOfMonth !== "" &&  month !== "" && year !== "" && dayOfMonth > 0 && dayOfMonth <31 && month > 0 && month < 12 && year > 0 && year < 100){
         document.getElementById("result").innerHTML ='select gender'
         alert('select gender')
+  }else if(gen[1].checked == true || gen[0].checked == true && century !== "" &&  dayOfMonth !== "" && dayOfMonth > 0 && dayOfMonth <31 && year !== "" && year < 0 || year > 100 || month === ""  && month < 0 && month > 12 ){
+        document.getElementById("result").innerHTML = ` enter month`;
+        alert('enter correct month')
   }else{
       document.getElementById("result").innerHTML= `insert correct data`;
       alert('fill all fields')
